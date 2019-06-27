@@ -1,0 +1,70 @@
+////
+// Shade function.
+// See _variables.scss for source. Added for $priority-default-icons-map.
+////
+$shade-map: (
+  50:                           90%,
+  100:                          80%,
+  200:                          65%,
+  300:                          40%,
+  400:                          20%,
+  500:                          0%,
+  600:                          20%,
+  700:                          40%,
+  800:                          65%,
+  900:                          80%,
+  950:                          90%
+);
+
+@function shade($color, $shade: 500) {
+  $mixer: if($shade < 500, $white, $black);
+  $saturation: if($shade < 500, 0, ($shade - 500) / 20);
+  @return saturate(mix($mixer, $color, map-get($shade-map, $shade)), $saturation);
+}
+
+////
+// Colors.
+// See _variables.scss for source colors. Added for $priority-default-icons-map.
+////
+$blue:                          #0065ff;
+$indigo:                        #4e65e5;
+$purple:                        #614ba6;
+$red:                           #e5123d;
+$orange:                        #fc8c12;
+$yellow:                        #ffc107;
+$teal:                          #00b3ad;
+
+$white:                         #fff;
+$black:                         #000;
+$gray:                          hsl(hue($indigo), 20%, 85%);
+
+// Header background color.
+$brand-primary: #D5D5D5;
+
+// Priority colors.
+$priority-default-icons-map: (
+  low3: (
+    icon:                       "priority-low.svg",
+    color:                      $teal,
+    color-bg:                   shade($gray, 200)
+  ),
+  default: (
+    icon:                       "priority-medium.svg",
+    color:                      inherit,
+  ),
+  high3: (
+    icon:                       "priority-highest.svg",
+    color:                      mix($blue, $yellow),
+    color-bg:                   shade($yellow, 50)
+  ),
+  high2: (
+    icon:                       "priority-major.svg",
+    color:                      mix($blue, $orange),
+    color-bg:                   shade($orange, 100)
+  ),
+  highest: (
+    icon:                       "priority-critical.svg",
+    color:                      shade($blue, 600),
+    color-bg:                   shade($red, 100)
+  )
+);
