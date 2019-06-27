@@ -108,7 +108,12 @@ body[class^="theme-Purplemine2 project-"] a.icon.new-issue {
 // PRIORITY COLORS
 ////
 
-// Background colors for task lists.
+tr.priority-highest {
+  color: black;
+  font-weight: bold;
+}
+
+// Background colors.
 @each $priority-id, $priority-color in $priority-icons-map {
   table.list tbody tr.priority-#{$priority-id} {
     background: map-get($priority-color, color-bg);
