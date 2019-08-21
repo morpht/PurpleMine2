@@ -111,6 +111,12 @@ body[class^="theme-Purplemine2 project-"] a.icon.new-issue {
 tr.priority-highest {
   color: black;
   font-weight: bold;
+  td {
+    a {
+      // AA compliant contrast.
+      color: $dark-blue;
+    }
+  }
 }
 
 // Background colors.

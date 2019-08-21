@@ -27,6 +27,7 @@ $shade-map: (
 // See _variables.scss for source colors. Added for $priority-default-icons-map.
 ////
 $blue:                          #0065ff;
+$dark-blue:                     #003061;
 $indigo:                        #4e65e5;
 $purple:                        #614ba6;
 $red:                           #e5123d;
@@ -64,7 +65,7 @@ $priority-default-icons-map: (
   ),
   highest: (
     icon:                       "priority-critical.svg",
-    color:                      shade($blue, 600),
+    color:                      $dark-blue,
     color-bg:                   darken(shade($red, 100), 20%)
   )
 );
