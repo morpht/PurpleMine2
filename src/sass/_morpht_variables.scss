@@ -56,16 +56,16 @@ $priority-default-icons-map: (
   high3: (
     icon:                       "priority-highest.svg",
     color:                      mix($blue, $yellow),
-    color-bg:                   darken(shade($yellow, 50), 20%)
+    color-bg:                   darken(shade($yellow, 50), 10%)
   ),
   high2: (
     icon:                       "priority-major.svg",
     color:                      mix($blue, $orange),
-    color-bg:                   darken(shade($orange, 100), 20%)
+    color-bg:                   darken(shade($orange, 100), 10%)
   ),
   highest: (
     icon:                       "priority-critical.svg",
     color:                      $dark-blue,
-    color-bg:                   darken(shade($red, 100), 20%)
+    color-bg:                   darken(shade($red, 100), 10%)
   )
 );

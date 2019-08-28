@@ -62,7 +62,6 @@
 ////
 // LOGIN
 ////
-
 #wrapper {
   .button-login-text {
     background-image: none;
@@ -85,7 +84,6 @@ body[class^="theme-Purplemine2 project-"] a.icon.new-issue {
 ////
 // BESTEST TIMER
 ////
-
 .bestest_timer_button:not(:hover) {
   background-color: grey !important;
   box-shadow: 0 1px 0 #555 !important;
@@ -105,12 +103,15 @@ body[class^="theme-Purplemine2 project-"] a.icon.new-issue {
 }
 
 ////
-// PRIORITY COLORS
+// TABLE LISTINGS
 ////
 
+tr.issue {
+  color: black;
+}
+// Priority colors.
 tr.priority-highest {
   color: black;
-  font-weight: bold;
   td {
     a {
       // AA compliant contrast.
@@ -118,7 +119,6 @@ tr.priority-highest {
     }
   }
 }
-
 // Background colors.
 @each $priority-id, $priority-color in $priority-icons-map {
   table.list tbody tr.priority-#{$priority-id} {
@@ -129,7 +129,6 @@ tr.priority-highest {
 ////
 // WATCHERS
 ////
-
 #sidebar #watchers {
   ul {
     // Remove margin which makes icons appear outside of container.
