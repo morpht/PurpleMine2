@@ -1,0 +1,71 @@
+////
+// Shade function.
+// See _variables.scss for source. Added for $priority-default-icons-map.
+////
+$shade-map: (
+  50:                           90%,
+  100:                          80%,
+  200:                          65%,
+  300:                          40%,
+  400:                          20%,
+  500:                          0%,
+  600:                          20%,
+  700:                          40%,
+  800:                          65%,
+  900:                          80%,
+  950:                          90%
+);
+
+@function shade($color, $shade: 500) {
+  $mixer: if($shade < 500, $white, $black);
+  $saturation: if($shade < 500, 0, ($shade - 500) / 20);
+  @return saturate(mix($mixer, $color, map-get($shade-map, $shade)), $saturation);
+}
+
+////
+// Colors.
+// See _variables.scss for source colors. Added for $priority-default-icons-map.
+////
+$blue:                          #0065ff;
+$dark-blue:                     #003061;
+$indigo:                        #4e65e5;
+$purple:                        #614ba6;
+$red:                           #e5123d;
+$orange:                        #fc8c12;
+$yellow:                        #ffc107;
+$teal:                          #00b3ad;
+
+$white:                         #fff;
+$black:                         #000;
+$gray:                          hsl(hue($indigo), 20%, 85%);
+
+// Header background color.
+$brand-primary: #D5D5D5;
+
+// Priority colors.
+$priority-default-icons-map: (
+  low3: (
+    icon:                       "priority-low.svg",
+    color:                      $teal,
+    color-bg:                   darken(shade($gray, 200), 20%)
+  ),
+  default: (
+    icon:                       "priority-medium.svg",
+    color:                      inherit,
+  ),
+  high3: (
+    icon:                       "priority-highest.svg",
+    color:                      mix($blue, $yellow),
+    color-bg:                   darken(shade($yellow, 50), 10%)
+  ),
+  high2: (
+    icon:                       "priority-major.svg",
+    color:                      mix($blue, $orange),
+    color-bg:                   darken(shade($orange, 100), 10%)
+  ),
+  highest: (
+    icon:                       "priority-critical.svg",
+    color:                      $dark-blue,
+    color-bg:                   darken(shade($red, 100), 10%)
+  )
+);
