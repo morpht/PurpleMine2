@@ -1,14 +1,15 @@
 ////
 // HEADER
 ////
+
 #wrapper {
   #top-menu {
     background: #111;
     a {
-      color: #FFF;
+      color: #fff;
       font-weight: normal;
       &:hover {
-        color: #85C7FF;
+        color: #85c7ff;
       }
     }
     // Hide "Logged in as".
@@ -21,26 +22,25 @@
     }
   }
   #header {
-    background-image: url('/themes/PurpleMine2/images/morpht-logo.svg'); /* fallback */
-    background-image: url('/themes/PurpleMine2/images/morpht-logo.svg'), linear-gradient(#E6E6E6, $brand-primary); /* W3C */
+    background-image: url("/themes/PurpleMine2/images/morpht-logo.svg"), linear-gradient(#e6e6e6, $brand-primary);
     background-repeat: no-repeat, repeat-x;
     background-position: 20px 5px, 0 0;
     background-size: auto 38px;
     @media (max-width: 899px) {
-      background-position: 15px 10px, 0 0;
       background-color: $brand-primary;
+      background-position: 15px 10px, 0 0;
     }
     a.mobile-toggle-button {
-      color: #333;
       border-left: #ccc;
+      color: #333;
     }
     h1 {
+      margin-left: 170px !important;
+      padding: 12px 20px;
+      border-left: 1px solid #bcbcbc;
       color: #333;
       font-size: 1.5em;
       font-weight: normal;
-      padding: 12px 20px;
-      margin-left: 170px !important;
-      border-left: 1px solid #BCBCBC;
     }
     #quick-search {
       @media (max-width: 899px) {
@@ -62,6 +62,7 @@
 ////
 // LOGIN
 ////
+
 #wrapper {
   .button-login-text {
     background-image: none;
@@ -69,7 +70,7 @@
 }
 
 ////
-// My Page -> Issues assigned to me
+// My Page -> Issues assigned to me.
 ////
 
 // Hide "New issue" link by default.
@@ -82,8 +83,17 @@ body[class^="theme-Purplemine2 project-"] a.icon.new-issue {
 }
 
 ////
+// ISSUES LISTING
+////
+
+#history p.nodata {
+  display: none;
+}
+
+////
 // BESTEST TIMER
 ////
+
 .bestest_timer_button:not(:hover) {
   background-color: grey !important;
   box-shadow: 0 1px 0 #555 !important;
@@ -129,6 +139,7 @@ tr.priority-highest {
 ////
 // WATCHERS
 ////
+
 #sidebar #watchers {
   ul {
     // Remove margin which makes icons appear outside of container.
