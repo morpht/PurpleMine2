@@ -159,8 +159,17 @@ tr.priority-highest {
 // SATISFACTION
 ////
 
-.vote,
-.myvote {
+// Revert container columns.
+.attributes .splitcontent:last-child {
+  .splitcontentleft {
+    float: left;
+    width: auto;
+    padding-right: 10px;
+  }
+}
+
+// Rename results label.
+.vote {
   position: relative;
   > .label {
     visibility: hidden;
@@ -168,43 +177,55 @@ tr.priority-highest {
       visibility: visible;
       position: absolute;
       left: 0;
-    }
-  }
-  > .value {
-    .vote_on_issues-issue-votes-nowrap {
-      padding-right: 10px;
-      > .vote_on_issues-icon-votes {
-        display: none;
-      }
+      content: "Satisfaction:";
     }
   }
 }
 
-// Labels.
-.vote > .label::after {
-  content: "Satisfaction:";
-}
-.myvote > .label::after {
-  content: "My satisfaction:";
+// Hide results elements.
+#vote_on_issues_nVotesUp + img,
+#vote_on_issues_nVotesDn + img,
+#vote_on_issues-link-voters {
+  display: none;
 }
 
-// Vote results.
-#vote_on_issues_nVotesUp::after,
-#vote_on_issues_nVotesDn::after {
-  display: inline-block;
-  padding-left: 5px;
-  &:hover {
-    cursor: pointer;
+// Hide vote elements.
+.myvote {
+  .label,
+  #vote_on_issues_MyVoteNil,
+  #vote_on_issues_MyVoteUpOn,
+  #vote_on_issues_MyVoteDnOn,
+  .vote_on_issues-issue-votes-nowrap:last-of-type > span {
+    display: none !important;
   }
 }
-#vote_on_issues_nVotesUp::after {
-  content: "👍";
+
+// Move vote buttons next to results.
+.vote {
+  width: 0;
+  .value {
+    position: relative;
+    min-width: 0 !important;
+    #vote_on_issues_nVotesUp,
+    #vote_on_issues_nVotesDn {
+      position: absolute;
+    }
+    #vote_on_issues_nVotesUp {
+      left: 0;
+    }
+    #vote_on_issues_nVotesDn {
+      left: 45px;
+    }
+  }
 }
-#vote_on_issues_nVotesDn::after {
-  content: "👎";
+.myvote {
+  padding-left: 0 !important;
+  .vote_on_issues-icon-vote[href$="vote_val=vdn"] {
+    padding-left: 25px;
+  }
 }
 
-// My vote buttons.
+// Replace vote buttons.
 .myvote {
   #vote_on_issues_MyVoteUpOff,
   #vote_on_issues_MyVoteDnOff {
