@@ -184,9 +184,21 @@ tr.priority-highest {
 
 // Hide results elements.
 #vote_on_issues_nVotesUp + img,
-#vote_on_issues_nVotesDn + img,
-#vote_on_issues-link-voters {
+#vote_on_issues_nVotesDn + img {
   display: none;
+}
+
+// Position "Voters" link.
+#vote_on_issues-link-voters {
+  position: absolute;
+  left: 110px;
+  @media only screen and (max-width: 600px) {
+    left: 0;
+    top: 20px;
+  }
+}
+#vote_on_issues-issue-voters {
+  max-width: inherit !important;
 }
 
 // Hide vote elements.
