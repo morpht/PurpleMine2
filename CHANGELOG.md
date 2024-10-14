@@ -1,3 +1,25 @@
+v2.16.2 (2023-11-20):
+
+* Fixed #268 calendar display with Redmine 5.1
+
+v2.16.1 (2023-10-11):
+
+* Fixed #266 typo of expanded icon class
+
+v2.16.0 (2023-05-14):
+
+* Update theme to make it work with 5.0.
+* Fixed issues #222, #233, #242, #245, #246, #253, and few others.
+
+v2.15.0 (2021-05-23):
+
+* Updated styles for Redmine 4.2.
+* Merged #225 (via #228): improved documents styles.
+
+v2.14.0 (2021-01-27):
+
+* Merged #220: fixed drag & drop behavior.
+
 v2.13.0 (2020-09-26):
 
 * Replaced node-sass with sass.
